@@ -1,0 +1,2 @@
+# LearningSupportSystem
+システム開発にて学習支援システムをマージするためのリポジトリ。
