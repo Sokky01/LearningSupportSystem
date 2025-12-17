@@ -1,0 +1,67 @@
+body {
+    background: radial-gradient(circle at center, #fff8d6, #f9e07f, #d4a017);
+    font-family: "Yu Gothic", sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* コンテナ（メインカード） */
+.container {
+    background-color: #fffdf5; /* やや金寄りの白 */
+    border: 2px solid #d4a017; /* 濃金のボーダー */
+    width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(212, 160, 23, 0.3); /* 金色寄りの柔らかい影 */
+}
+
+/* 見出し（Goldらしい濃い金） */
+h2 {
+    color: #705000; /* 深い金色 */
+    margin-bottom: 20px;
+}
+
+/* タイマーボックス */
+.timer-box {
+    background-color: #fff6d0; /* 淡い金クリーム色 */
+    border: 1px solid #d4a017;
+    width: 180px;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* タイマー文字 */
+#timer {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #705000; /* 深い金色 */
+}
+
+/* ボタンエリア */
+.button-area {
+    margin-top: 30px;
+}
+
+/* ボタン：白×金の上質デザイン */
+button {
+    margin: 5px 10px;
+    padding: 10px 20px;
+    background-color: #fffdf5;
+    border: 2px solid #d4a017;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #705000;
+    font-weight: bold;
+}
+
+/* ホバー：ゴールドに光る */
+button:hover {
+    background-color: #f9e07f;
+    color: #5a4000;
+    border-color: #b88c0b;
+}

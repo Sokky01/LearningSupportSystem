@@ -1,0 +1,131 @@
+@charset "UTF-8";
+body {
+    font-family: "Yu Gothic", sans-serif;
+    background: #dff5ff;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image:
+        radial-gradient(circle at 80% 20%, #c2ffb0 0%, #dff5ff 60%),
+        radial-gradient(circle at 20% 30%, #fff5b7 0%, #dff5ff 60%),
+        radial-gradient(circle at 60% 70%, #e7d4ff 0%, #dff5ff 60%),
+        radial-gradient(circle at 10% 85%, #ffdede 0%, #dff5ff 60%);
+    background-size: cover;
+}
+
+header {
+    background: rgba(255,255,255,0.7);
+    padding: 8px 12px;
+    border-bottom: 1px solid #aaa;
+    font-weight: bold;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    background: #f3f2ce;
+    padding: 6px 10px;
+    border-bottom: 1px solid #aaa;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+    background: #fff6a0;
+    border: 1px solid #ccc;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background .2s;
+}
+
+.navbar a:hover {
+    background: #ffe46a;
+}
+
+.breadcrumb {
+    margin: 10px 0;
+    text-align: left;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+.container {
+    width: min(90%, 800px);
+    margin: 0 auto;
+    background: rgba(255,255,255,0.4);
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.title-box h1 {
+    margin: 10px 0 30px;
+    font-size: 26px;
+}
+
+.content-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+select {
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #999;
+    width: 60%;
+    max-width: 400px;
+}
+
+button {
+    padding: 10px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(#6aa6ff, #345ee0);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform .15s, opacity .15s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.hint {
+    background: rgba(255,255,255,0.8);
+    padding: 10px 15px;
+    border: 1px dashed #666;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333;
+    width: fit-content;
+}
+
+#backBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 18px;
+    background: #eee;
+    color: #000;
+    border: 1px solid #666;
+    border-radius: 4px;
+    padding: 8px 20px;
+}
+
+@media(max-width: 640px) {
+    select {
+        width: 80%;
+    }
+    .hint {
+        font-size: 13px;
+    }
+}

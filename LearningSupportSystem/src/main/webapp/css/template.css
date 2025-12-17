@@ -1,0 +1,74 @@
+@charset "UTF-8";
+.breadcrumb {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumb li {
+  display: inline;/*横に並ぶように*/
+  list-style: none;
+  font-weight: bold;/*太字*/
+}
+
+.breadcrumb li:after {
+  /* >を表示*/
+  content: '>';
+  padding: 0 0.2em;
+  color: #555;
+}
+
+.breadcrumb li:last-child:after {
+  content: '';
+}
+
+.breadcrumb li a {
+  text-decoration: none;
+  color: gray;
+}
+
+.breadcrumb li a:hover {
+  text-decoration: underline;
+}
+
+body {
+	font-family: "Meiryo", sans-serif;
+	background-color: #f7f7f7;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	width: 800px;
+	margin: 30px auto;
+	background-color: white;
+	border: 1px solid #ccc;
+	box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+}
+
+h2 {
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 20px;
+}
+
+.menu {
+	background-color: #f0f0f0;
+	padding: 10px;
+	display: flex;
+	justify-content: space-around;
+	border-bottom: 1px solid #ccc;
+}
+
+.menu button {
+	background-color: #fff;
+	border: 1px solid #aaa;
+	padding: 5px 15px;
+	cursor: pointer;
+}
+
+.menu button.active {
+	background-color: #e0e0e0;
+	font-weight: bold;
+}
