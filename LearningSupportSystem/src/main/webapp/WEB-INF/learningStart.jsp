@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>学習開始画面</title>
-<link rel="stylesheet" href="css/learningStart.css">
+<link rel="stylesheet" href="css/learningStart.css?=3">
 </head>
 <body>
 
@@ -17,15 +17,15 @@
 
 <nav class="navbar">
     <a href="<%= request.getContextPath() %>/UserMainmenuServlet">メインメニュー</a>
-    <a href="#">アカウント情報</a>
-    <a href="#">学習記録情報</a>
+    <a href="<%= request.getContextPath() %>/Account_info">利用者情報</a>
+    <a href="#">学習記録</a>
     <a href="#">学習時間グラフ</a>
     <a href="#">ミッション</a>
     <a href="#">ランキング</a>
 </nav>
 
 <div class="breadcrumb">
-    <span>メインメニュー &gt;&gt; 学習開始</span>
+    <span><a href="<%= request.getContextPath() %>/UserMainmenuServlet">メインメニュー</a> &gt;&gt; 学習開始</span>
 </div>
 
 <div class="container">
@@ -63,7 +63,8 @@
         </p>
     </div>
 
-    <button id="backBtn" onclick="location.href='userMainmenu.jsp'">戻る</button>
+    <button id="backBtn" onclick="location.href='<%= request.getContextPath() %>/UserMainmenuServlet'">戻る</button>
+
 </div>
 
 <script>

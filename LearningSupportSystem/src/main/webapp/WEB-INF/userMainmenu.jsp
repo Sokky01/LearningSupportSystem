@@ -12,7 +12,7 @@
 <head>
 <meta charset="UTF-8">
 <title>利用者用メインメニュー画面</title>
-<link rel="stylesheet" href="css/userMainmenu.css">
+<link rel="stylesheet" href="css/userMainmenu.css?=2">
 </head>
 <body>
 
@@ -22,7 +22,6 @@
 </header>
 	<div class="container">
 	    <h1>学習支援サービス</h1>
-	    <p class="subtitle">メインメニュー</p>
 	
 	    <div class="menu-row">
 	        <form action="Learningstarttransition" method="get"><button>学習開始</button></form>
@@ -30,17 +29,13 @@
 	    </div>
 	
 	    <div class="menu-row">
-	        <button>利用者情報</button>
-	        <button>カレンダー</button>
-	    </div>
-	
-	    <div class="menu-row">
-	        <button>ランキング</button>
 	        <button>ミッション</button>
+	        <button>ランキング</button>
 	    </div>
 	
 	    <div class="menu-row">
 	        <button>学習時間グラフ</button>
+	        <form action="Account_info" method="get"><button>利用者情報</button></form>
 	    </div>
 	</div>
 	<form action="UserLogoutServlet" method="get">

@@ -1,6 +1,6 @@
 package lrs.lrs0701.logic;
 
-import lrs.lrs0701.model.AdminLoginBeans;
+import ams.ams0101.model.beans.AdminLoginBeans;
 
 public class AdminLoginDecisionLogic {
 	public  boolean pw(String Password,AdminLoginBeans admin){ 

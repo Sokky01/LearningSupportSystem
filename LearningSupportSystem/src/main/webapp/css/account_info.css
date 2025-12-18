@@ -1,0 +1,273 @@
+@charset "UTF-8";
+body {
+    font-family: "Yu Gothic", sans-serif;
+    font-size: 20px; /* 全体の基本フォントサイズをさらに大きく */
+    background: #dff5ff;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow-x: hidden;
+    background-image:
+        radial-gradient(circle at 80% 20%, #c2ffb0 0%, #dff5ff 60%),
+        radial-gradient(circle at 20% 30%, #fff5b7 0%, #dff5ff 60%),
+        radial-gradient(circle at 60% 70%, #e7d4ff 0%, #dff5ff 60%),
+        radial-gradient(circle at 10% 85%, #ffdede 0%, #dff5ff 60%);
+    background-size: cover;
+}
+
+/* ===== ヘッダータイトル 共通 ===== */
+header {
+    background: rgba(255,255,255,0.7);
+    padding: 12px 16px;
+    border-bottom: 1px solid #aaa;
+    font-weight: bold;
+}
+
+header div {
+    font-size: 20px;      /* ★ 統一 */
+    letter-spacing: 1px;
+}
+
+
+.title-box h1 {
+    margin: 10px 0 30px;
+    font-size: 26px;
+}
+
+/* ===== ナビゲーションバー 共通スタイル ===== */
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    background: #f3f2ce;
+    padding: 10px 16px;
+    border-bottom: 1px solid #aaa;
+}
+
+/* ナビゲーションのリンク */
+.navbar a {
+    text-decoration: none;
+    color: #000;
+    background: #fff6a0;
+    border: 1px solid #ccc;
+    padding: 8px 16px;
+    border-radius: 6px;
+
+    font-size: 18px;      /* ★ 文字サイズ統一 */
+    font-weight: bold;
+    line-height: 1.4;
+
+    transition: background .2s, transform .15s;
+}
+
+/* ホバー時 */
+.navbar a:hover {
+    background: #ffe46a;
+    transform: translateY(-1px);
+}
+
+/* スマホ対応 */
+@media (max-width: 640px) {
+    .navbar {
+        gap: 8px;
+        padding: 8px 10px;
+    }
+
+    .navbar a {
+        font-size: 16px;   /* ★ スマホ用に少し下げる */
+        padding: 6px 12px;
+    }
+}
+
+
+.breadcrumb {
+    margin: 10px 0;
+    text-align: left;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+.container {
+    width: min(90%, 900px);
+    margin: 30px auto;
+    background: rgba(255,255,255,0.6); /* わずかに不透明度を上げて文字を読みやすく */
+    border: 2px solid rgba(0,0,0,0.65); /* 黒の代わりに少し透過した線に変更 */
+    padding: 28px 30px;
+    text-align: center; /* 中央揃えに変更 */
+    border-radius: 8px;
+    color: #1a1a1a; /* 内部の文字色を明確に */
+}
+
+h1 {
+    margin: 0 0 12px 0;
+    font-size: 36px; /* さらに大きめ */
+    display: block;
+}
+
+.subtitle {
+    font-size: 22px;
+    margin: 0 0 18px 0;
+    display: block;
+    color: #123e80;
+}
+
+.menu-row {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    padding: 25px 0;
+    border-bottom: 2px solid #666;
+    flex-wrap: wrap;
+}
+
+.menu-row:last-child {
+    border: none;
+}
+
+#backBtn {
+    bottom: 20px;
+    right: 20px;
+    font-size: var(--font-medium);
+    background: #eee;
+    color: #000;
+    border: 1px solid #666;
+    border-radius: 4px;
+    padding: 8px 20px;
+}
+
+
+#logout {
+    position: fixed;
+    bottom: 80px; /* floating-actions と重ならないよう上に移動 */
+    right: 20px;
+    font-size: 18px;
+    background: #eee;
+    color: #000;
+    border: 1px solid #666;
+    border-radius: 4px;
+    padding: 8px 20px;
+}
+
+@media(max-width: 640px){
+    body { font-size: 18px; }
+    button {
+        min-width: 140px;
+        font-size: 18px;
+        padding: 10px 12px;
+    }
+    .menu-row {
+        gap: 30px;
+    }
+}
+
+/* ここから追記: 枠内テキストの見やすさ向上と枠外ボタン配置 */
+
+/* .container 内の本文やラベル等の一般スタイル */
+.container .content,
+.container p,
+.container label,
+.container td,
+.container th {
+    font-size: 22px;      /* 全体のテキストをさらに大きく */
+    line-height: 1.6;     /* 行間を広げて可読性を向上 */
+    color: #1a1a1a;       /* 高コントラスト */
+    text-align: center;   /* 枠内は中央揃え */
+}
+
+/* .container 内のボタンは視認性を高める */
+.container button {
+    background: linear-gradient(#4a9bff, #1f4ed8);
+    box-shadow: 0 6px 14px rgba(31,78,216,0.18);
+}
+
+/* 枠外右下に配置するための共通クラス: 画面右下に固定配置 */
+.floating-actions {
+    position: fixed;
+    bottom: 20px; /* 画面の底から20px */
+    right: 20px;  /* 画面の右から20px */
+    display: flex;
+    flex-direction: column; /* 縦並び */
+    gap: 10px;
+    z-index: 1400; /* 十分に前面に出す */
+    align-items: flex-end; /* ボタンを右寄せ */
+}
+
+.floating-action,
+#backBtn,
+#settings {
+	width: 120px;          /* ← 好きな幅に調整OK */
+	text-align: center;
+    display: inline-block;
+    background: #fff;
+    color: #000;
+    border: 1px solid #666;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 20px; /* 大きめ */
+    cursor: pointer;
+}
+
+/* 設定と戻るは強調したい場合の代替スタイル */
+#settings {
+    background: linear-gradient(#ffd27a, #ffb347);
+    border-color: #cc8a00;
+    color: #2a1700;
+}
+
+/* レスポンシブ調整: 小さい画面では横並びにして右下に収める */
+@media(max-width: 460px) {
+    .floating-actions {
+        flex-direction: row;
+        right: 12px;
+        bottom: 12px;
+    }
+    .floating-action,
+    #backBtn,
+    #settings {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+    .container {
+        padding: 16px;
+    }
+}
+
+/* プロフィール枠（さっきまであった枠） */
+.profile-box {
+    margin: 20px auto;
+    padding: 24px 30px;
+    background: rgba(255,255,255,0.75);
+    border: 2px solid rgba(0,0,0,0.6);
+    border-radius: 8px;
+    max-width: 700px;
+}
+
+/* 枠の中のリスト */
+.profile-list {
+    text-align: left; /* containerのcenterを打ち消す */
+}
+
+/* 1行レイアウト */
+.profile-row {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    margin-bottom: 14px;
+}
+
+.profile-row:last-child {
+    margin-bottom: 0;
+}
+
+.profile-row .label {
+    width: 180px;        /* 幅は固定のまま */
+    text-align: left;    /* ← 左揃えに変更 */
+    font-weight: bold;
+    margin-right: 24px;
+}
+
+
+.profile-row .value {
+    letter-spacing: 2px;
+}
