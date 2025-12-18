@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
+import ams.ams0101.model.beans.AdminLoginBeans;
 import lrs.lrs0701.dao.LearningstarttransitionDAO;
 import lrs.lrs0701.logic.CountUpLogic;
 import lrs.lrs0701.model.LearningstarttransitionBeans;
@@ -29,10 +30,8 @@ public class CountUpServlet extends HttpServlet {
             subjectId = Integer.parseInt(subjectIdStr);
             session.setAttribute("subjectId", subjectId);
         }
-
-        // セッションスコープで StudentNo を取得するため、仮で定義
-        int testStudentNo = 20234112;
-        session.setAttribute("studentNo", testStudentNo);
+        
+	  	//ここから
         //グレードを仮で定義。
       	String testgrade = "silver";
       	session.setAttribute("grade", testgrade);
@@ -72,7 +71,8 @@ public class CountUpServlet extends HttpServlet {
         HttpSession session = request.getSession();
 
         // ユーザーIDを取得
-        Integer userId = (Integer) session.getAttribute("studentNo");
+        AdminLoginBeans ALB = (AdminLoginBeans) session.getAttribute("Loginbeans");
+        int userId = ALB.getAccountId();
 
         // session から subjectId を安全に取得
         Object subjectObj = session.getAttribute("subjectId");
