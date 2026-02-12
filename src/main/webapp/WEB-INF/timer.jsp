@@ -79,7 +79,7 @@ case 1:
 .timer-box {
 	background: #fff;
 	border: 3px solid #003366;
-	border-radius: 50%;
+	border-radius: 15px;
 	width: min(40vw, 320px);
 	height: min(40vw, 320px);
 	display: flex;
