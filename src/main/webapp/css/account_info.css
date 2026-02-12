@@ -1,0 +1,49 @@
+/* ================================
+   アカウント情報表示画面 専用CSS
+   プロフィール表示に必要な固有スタイルのみ
+================================ */
+
+/* プロフィールボックス */
+.profile-box {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 30px 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* グリッドレイアウトの定義リスト */
+.profile-box dl {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    row-gap: 18px;
+    column-gap: 20px;
+    margin: 0;
+}
+
+.profile-box dt {
+    font-weight: 600;
+    color: #333;
+    padding: 10px 0;
+}
+
+.profile-box dd {
+    margin: 0;
+    color: #555;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-box dd:last-of-type {
+    border-bottom: none;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .profile-box {
+        padding: 20px;
+    }
+    
+    .profile-box dl {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,400 @@
+/**
+ * admin-theme.css
+ * 管理者用統一テーマ
+ * 
+ * コンセプト: 質素で実用的、視認性重視、業務効率を優先
+ */
+
+/* ===== CSS変数定義（管理者用） ===== */
+:root {
+    /* 管理者カラーパレット - 落ち着いた色調 */
+    --admin-primary: #495057;
+    --admin-secondary: #6c757d;
+    --admin-accent: #007bff;
+    --admin-success: #28a745;
+    --admin-warning: #ffc107;
+    --admin-danger: #dc3545;
+    --admin-info: #17a2b8;
+    
+    /* 背景色 - グレートーン */
+    --admin-bg: #f8f9fa;
+    --admin-bg-white: #ffffff;
+    --admin-bg-light: #e9ecef;
+    --admin-bg-dark: #dee2e6;
+    
+    /* テキスト */
+    --admin-text: #212529;
+    --admin-text-muted: #6c757d;
+    
+    /* ボーダー */
+    --admin-border: #ced4da;
+    --admin-border-dark: #adb5bd;
+    
+    /* その他 */
+    --admin-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    --admin-shadow-hover: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== 基本スタイル ===== */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--admin-bg);
+    color: var(--admin-text);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== ヘッダーメニュー（共通ナビゲーション） ===== */
+.header-menu {
+    background: var(--admin-primary);
+    padding: 12px 20px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+.header-menu form {
+    margin: 0;
+}
+
+.header-menu .menu-button {
+    background: var(--admin-bg-white);
+    border: 1px solid var(--admin-border);
+    color: var(--admin-text);
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.header-menu .menu-button:hover {
+    background: var(--admin-bg-light);
+    border-color: var(--admin-border-dark);
+}
+
+/* ===== コンテナ ===== */
+.container,
+.main-box {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: var(--admin-bg-white);
+    border: 1px solid var(--admin-border);
+    border-radius: 4px;
+    box-shadow: var(--admin-shadow);
+}
+
+/* ===== タイトル ===== */
+h1, h2, .title {
+    color: var(--admin-text);
+    font-size: 24px;
+    font-weight: 600;
+    margin: 20px 0 10px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--admin-border);
+}
+
+h1 {
+    text-align: center;
+}
+
+/* パンくずリスト */
+.path,
+.breadcrumb {
+    color: var(--admin-text-muted);
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+/* ===== テーブル ===== */
+.table-area {
+    overflow-x: auto;
+    max-height: 600px;
+    overflow-y: auto;
+    border: 1px solid var(--admin-border);
+    border-radius: 4px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--admin-bg-white);
+}
+
+thead {
+    position: sticky;
+    top: 0;
+    background: var(--admin-secondary);
+    z-index: 10;
+}
+
+th {
+    background: var(--admin-secondary);
+    color: white;
+    padding: 12px 10px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+    border-bottom: 2px solid var(--admin-border-dark);
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid var(--admin-bg-dark);
+    font-size: 14px;
+}
+
+tbody tr:hover {
+    background: var(--admin-bg-light);
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ===== ボタン ===== */
+button,
+input[type="submit"],
+input[type="button"],
+.btn {
+    background: var(--admin-secondary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+.btn:hover {
+    background: var(--admin-primary);
+    box-shadow: var(--admin-shadow-hover);
+}
+
+/* ボタン種類別 */
+.update-btn,
+.edit-btn {
+    background: var(--admin-accent);
+    padding: 6px 14px;
+    font-size: 13px;
+}
+
+.update-btn:hover,
+.edit-btn:hover {
+    background: #0056b3;
+}
+
+.delete-btn,
+.logout-button {
+    background: var(--admin-danger);
+}
+
+.delete-btn:hover,
+.logout-button:hover {
+    background: #c82333;
+}
+
+.back-btn,
+.cancel-btn {
+    background: var(--admin-secondary);
+}
+
+.back-btn:hover,
+.cancel-btn:hover {
+    background: var(--admin-primary);
+}
+
+.save-btn,
+.register-btn {
+    background: var(--admin-success);
+}
+
+.save-btn:hover,
+.register-btn:hover {
+    background: #218838;
+}
+
+/* ===== フォーム ===== */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--admin-border);
+    border-radius: 4px;
+    font-size: 14px;
+    background: var(--admin-bg-white);
+    transition: border-color 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--admin-accent);
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 15px;
+}
+
+.form-row label {
+    width: 150px;
+    font-weight: 500;
+    color: var(--admin-text);
+    font-size: 14px;
+}
+
+.form-row input,
+.form-row select {
+    flex: 1;
+}
+
+/* ===== メニューグリッド（管理者メインメニュー用） ===== */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.menu-button {
+    background: var(--admin-bg-white);
+    border: 2px solid var(--admin-border);
+    color: var(--admin-text);
+    padding: 40px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.menu-button:hover {
+    background: var(--admin-bg-light);
+    border-color: var(--admin-accent);
+    color: var(--admin-accent);
+    box-shadow: var(--admin-shadow-hover);
+}
+
+/* ===== ボタンエリア ===== */
+.button-area,
+.logout-area,
+.back-area {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+/* ===== メッセージ ===== */
+.error,
+.error-message {
+    background: #f8d7da;
+    border-left: 4px solid var(--admin-danger);
+    color: #721c24;
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.success,
+.success-message {
+    background: #d4edda;
+    border-left: 4px solid var(--admin-success);
+    color: #155724;
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.info,
+.info-message {
+    background: #d1ecf1;
+    border-left: 4px solid var(--admin-info);
+    color: #0c5460;
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+/* ===== ID表示 ===== */
+.admin-id {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: var(--admin-secondary);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* ===== レスポンシブ対応 ===== */
+@media (max-width: 992px) {
+    .container,
+    .main-box {
+        margin: 10px;
+        padding: 15px;
+    }
+    
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .form-row label {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-menu {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .header-menu .menu-button {
+        width: 100%;
+    }
+    
+    h1, h2, .title {
+        font-size: 20px;
+    }
+    
+    .table-area {
+        max-height: 400px;
+    }
+    
+    th, td {
+        font-size: 12px;
+        padding: 8px 6px;
+    }
+}

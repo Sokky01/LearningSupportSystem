@@ -1,0 +1,448 @@
+/**
+ * unified-theme.css
+ * 全ページ共通のベーススタイル定義
+ * 
+ * 使い方: すべてのJSPで最初に読み込む
+ * <link rel="stylesheet" href="css/unified-theme.css">
+ * <link rel="stylesheet" href="css/個別ページ.css">
+ */
+
+/* ===== CSS変数定義 ===== */
+:root {
+    /* カラーパレット */
+    --primary: #667eea;
+    --primary-light: #764ba2;
+    --primary-dark: #5a67d8;
+    --accent: #3498db;
+    --accent-light: #5dade2;
+    --success: #27ae60;
+    --warning: #f39c12;
+    --danger: #e74c3c;
+    --info: #16a085;
+    
+    /* テキストカラー */
+    --text-dark: #2c3e50;
+    --text-gray: #7f8c8d;
+    --text-light: #95a5a6;
+    
+    /* 背景カラー */
+    --bg-white: #ffffff;
+    --bg-light: #ecf0f1;
+    --bg-lighter: #f8f9fa;
+    
+    /* その他 */
+    --border: #bdc3c7;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.15);
+    --radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+/* ===== リセット ===== */
+* {
+    box-sizing: border-box;
+}
+
+/* ===== body基本スタイル ===== */
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== コンテナ ===== */
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 30px auto;
+    padding: 32px 24px;
+    background-color: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* ===== タイトル系 ===== */
+h1,
+.title,
+.page-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 3px solid var(--accent);
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 20px 0 16px 0;
+    border-bottom: 2px solid var(--bg-light);
+    padding-bottom: 8px;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: var(--text-gray);
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+/* ===== ボタン基本スタイル ===== */
+button,
+input[type="submit"],
+input[type="button"],
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: var(--radius);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    min-width: 120px;
+    text-decoration: none;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* ボタン種類別 */
+.back-btn,
+.cancel-btn,
+.btn-cancel {
+    background: linear-gradient(135deg, var(--text-gray) 0%, var(--text-light) 100%);
+}
+
+.delete-btn {
+    background: linear-gradient(135deg, var(--danger) 0%, #c0392b 100%);
+}
+
+.save-btn,
+.btn-save {
+    background: linear-gradient(135deg, var(--success) 0%, #2ecc71 100%);
+}
+
+/* ===== フォーム要素 ===== */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 16px;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 15px;
+    font-family: inherit;
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+    transition: var(--transition);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+/* ===== テーブル ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: white;
+    padding: 12px;
+    text-align: center;
+    font-weight: 600;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid var(--border);
+    text-align: center;
+}
+
+tr:hover {
+    background-color: var(--bg-lighter);
+}
+
+/* ===== パンくずリスト ===== */
+.breadcrumb {
+    color: var(--text-gray);
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* ===== ボタンエリア ===== */
+.button-area,
+.buttons,
+.form-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+/* ===== エラー・メッセージ ===== */
+.error,
+.error-box {
+    background-color: #f8d7da;
+    border-left: 4px solid var(--danger);
+    color: #721c24;
+    padding: 16px 20px;
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+}
+
+.success {
+    background-color: #d4edda;
+    border-left: 4px solid var(--success);
+    color: #155724;
+    padding: 16px 20px;
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+}
+
+.message,
+.message-area {
+    background-color: #d1ecf1;
+    border-left: 4px solid var(--info);
+    color: #0c5460;
+    padding: 16px 20px;
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+}
+
+/* ===== モーダル ===== */
+.modal,
+#popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal.show,
+#popup.show {
+    display: flex;
+}
+
+.modal-content,
+.popup-content {
+    background: var(--bg-white);
+    padding: 30px;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-hover);
+    max-width: 500px;
+    width: 90%;
+}
+
+/* ===== 定義リスト ===== */
+dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 12px 20px;
+}
+
+dt {
+    font-weight: 600;
+    color: var(--text-dark);
+    padding: 10px 0;
+}
+
+dd {
+    margin: 0;
+    color: var(--text-gray);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--bg-light);
+}
+
+/* ===== フォーム行 ===== */
+.form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    gap: 16px;
+}
+
+.form-row label {
+    width: 180px;
+    font-weight: 600;
+}
+
+.form-row input,
+.form-row select {
+    flex: 1;
+}
+
+/* ===== レスポンシブ対応 ===== */
+@media (max-width: 992px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .form-row label {
+        width: 100%;
+    }
+    
+    dl {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    h1, .title {
+        font-size: 24px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+    
+    button {
+        width: 100%;
+    }
+}
+
+/* ===== ヘッダー専用スタイル ===== */
+header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: white;
+    padding: 15px 30px;
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* ヘッダー内のボタンコンテナ */
+header .button-container {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* ヘッダー内のボタン（強調表示） */
+header button,
+header input[type="submit"] {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    min-width: auto;
+}
+
+header button:hover,
+header input[type="submit"]:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ログアウトボタン（赤色強調） */
+header button[onclick*="Logout"],
+header button.logout-btn,
+header input[value*="ログアウト"] {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    border: 2px solid #c0392b;
+    color: white;
+}
+
+header button[onclick*="Logout"]:hover,
+header button.logout-btn:hover,
+header input[value*="ログアウト"]:hover {
+    background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+    border-color: #a93226;
+}
+
+/* ID表示（右端） */
+header .user-id,
+header #userId {
+    background: rgba(255, 255, 255, 0.25);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    margin-left: auto;
+}
+
+/* レスポンシブ対応 - ヘッダー */
+@media (max-width: 768px) {
+    header {
+        padding: 12px 15px;
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    header .button-container {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    header .user-id,
+    header #userId {
+        margin-left: 0;
+        text-align: center;
+    }
+}

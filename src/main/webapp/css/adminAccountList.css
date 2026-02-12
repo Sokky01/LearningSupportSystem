@@ -1,0 +1,123 @@
+@charset "UTF-8";/* --- 全体背景：左右グレーアウト --- */
+body {
+    margin: 0;
+    background-color: #dcdcdc; /* 薄グレー背景 */
+    font-family: "Meiryo", sans-serif;
+}
+
+/* --- 中央白パネル --- */
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.container {
+    width: 900px;
+    background: #fff;
+    border: 1px solid #444;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    padding: 0;
+}
+
+/* --- 画面上部タイトルバー --- */
+.title-bar {
+    background: #333;
+    color: #fff;
+    padding: 10px 15px;
+    font-weight: bold;
+}
+
+/* --- 上部メニュー --- */
+.menu {
+    display: flex;
+    background-color: #f8f5c8;
+    border-bottom: 1px solid #999;
+}
+
+.menu button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.menu button:hover {
+    background: #f0eeb6;
+}
+
+/* --- 見出し --- */
+.page-title {
+    font-size: 22px;
+    margin: 20px;
+    font-weight: bold;
+}
+
+/* --- パンくず --- */
+.breadcrumb {
+    margin: 0 20px;
+    color: #555;
+    font-size: 14px;
+}
+
+/* --- 絞り込み --- */
+.filter-area {
+    margin: 20px;
+    font-size: 16px;
+}
+
+.filter-area select {
+    padding: 5px;
+    font-size: 16px;
+}
+
+/* --- テーブル --- */
+.table-area {
+    margin: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: #f2f2f2;
+}
+
+.update-btn {
+    padding: 8px 15px;
+    background: #eee;
+    border: 1px solid #888;
+    cursor: pointer;
+}
+
+.update-btn:hover {
+    background: #ddd;
+}
+
+/* --- 戻るボタン --- */
+.back-btn {
+    margin: 20px;
+    display: inline-block;
+    padding: 8px 20px;
+    background: #eee;
+    border: 1px solid #555;
+    text-decoration: none;
+    color: #333;
+    border-radius: 4px;
+}
+
+.back-btn:hover {
+    background: #ddd;
+}

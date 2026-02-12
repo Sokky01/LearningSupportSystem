@@ -1,0 +1,63 @@
+/* ================================
+   学習時間グラフ画面 専用CSS
+   グラフ表示に必要な固有スタイルのみ
+================================ */
+
+/* Canvas（グラフ）の高さ調整 */
+canvas {
+    width: 100% !important;
+    height: 420px !important;
+}
+
+/* グラフコンテナ */
+.graph-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* メニューコントロール */
+.menu {
+    background-color: #f8f9fa;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.menu button {
+    background: white;
+    border: 1px solid #bdc3c7;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.menu button:hover {
+    background: #ecf0f1;
+}
+
+.menu button.active {
+    background: #3498db;
+    color: white;
+    border-color: #3498db;
+}
+
+/* 更新ボタン */
+#refreshBtn {
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 8px;
+    line-height: 1;
+}
+
+/* メニューのレスポンシブ対応 */
+@media (max-width: 640px) {
+    .menu {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+}

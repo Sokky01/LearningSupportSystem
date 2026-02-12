@@ -1,0 +1,166 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.util.List" %>
+<%@ page import="model.LearningstarttransitionBeans" %>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学習開始画面</title>
+
+<!-- 統一CSS -->
+<link rel="stylesheet" href="css/unified-theme.css">
+
+<style>
+/* ページ固有のスタイル */
+.subject-select-area {
+    background: #f8f9fa;
+    padding: 32px;
+    border-radius: 12px;
+    margin: 24px 0;
+}
+
+.subject-select-area label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 12px;
+}
+
+.subject-select-area select {
+    font-size: 16px;
+    padding: 12px 16px;
+    margin-bottom: 24px;
+}
+
+.hint-box {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #27ae60;
+    margin: 24px 0;
+}
+
+.hint-box p {
+    color: #2c3e50;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.button-group {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.start-icon {
+    font-size: 80px;
+    text-align: center;
+    margin: 20px 0;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 共通ヘッダーを読み込み（処理は変更なし） -->
+<jsp:include page="common/header.jsp" />
+
+<!-- ヘッダー -->
+<header>
+    <div>学習開始画面</div>
+</header>
+
+<!-- メインコンテンツ -->
+<main class="main-content">
+    <div class="content-wrapper">
+        <!-- パンくずリスト -->
+        <nav class="breadcrumb">
+            メインメニュー >> 学習開始
+        </nav>
+
+        <!-- コンテンツカード -->
+        <div class="page-content">
+            
+            <h1>📚 学習を開始しましょう</h1>
+            
+            <div class="start-icon">🎓</div>
+
+            <!-- 科目選択エリア -->
+            <div class="subject-select-area">
+                <label for="subject">学習する教科を選択：</label>
+                <select id="subject" name="subject" class="form-control">
+                    <option value="">選択してください</option>
+                    <%
+                    // ===== 処理部分（変更なし） =====
+                    List<LearningstarttransitionBeans> subjectList =
+                        (List<LearningstarttransitionBeans>) request.getAttribute("subjectList");
+                    if (subjectList != null) {
+                        for (LearningstarttransitionBeans subject : subjectList) {
+                    %>
+                        <option value="<%= subject.getSubjectid() %>">
+                            <%= subject.getSubjectname() %>
+                        </option>
+                    <%
+                        }
+                    }
+                    %>
+                </select>
+
+                <!-- フォーム（処理部分は変更なし） -->
+                <form action="CountUpServlet" method="get" onsubmit="return checkBeforeStart();">
+                    <input type="hidden" name="subjectId" id="selectedSubjectId">
+                    <button type="submit" id="startBtn" class="btn btn-primary btn-lg btn-block">
+                        ▶️ 学習開始
+                    </button>
+                </form>
+            </div>
+
+            <!-- ヒント表示 -->
+            <div class="hint-box">
+                <p>
+                    💡 <strong>使い方のヒント</strong><br>
+                    クリックすると選択した教科の学習画面に移動します。<br>
+                    学習が完了すると自動で記録されます。
+                </p>
+            </div>
+
+            <!-- 戻るボタン -->
+            <div class="button-group">
+                <button type="button" class="btn btn-outline" onclick="location.href='UserMainmenuServlet'">
+                    ← 戻る
+                </button>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<!-- JavaScript（処理ロジックは一切変更なし） -->
+<script>
+// 選択された教科IDをhiddenにセット
+document.getElementById('subject').addEventListener('change', function() {
+    document.getElementById('selectedSubjectId').value = this.value;
+});
+
+function checkBeforeStart() {
+    // ▼ 例：subjectId が設定されていない場合のチェック
+    const subjectId = document.getElementById("selectedSubjectId").value;
+
+    if (!subjectId) {
+        alert("科目が選択されていません。選択してください。");
+        return false;  // 送信しない
+    }
+
+    // ▼ 確認ダイアログを出したい場合（任意）
+    return confirm("学習を開始しますか？");
+
+    // true が返る → そのまま送信
+    // false → 送信キャンセル
+}
+</script>
+
+</body>
+</html>

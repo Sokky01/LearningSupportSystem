@@ -1,0 +1,61 @@
+/* ================================
+   学習ツール画面 専用CSS
+   タイマー表示とボタン配置に必要な固有スタイルのみ
+================================ */
+
+/* 学習ツールコンテナ */
+.learning-tools-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* タイマーボックス */
+.timer-box {
+    background-color: #fffccf;
+    border: 2px solid #667eea;
+    border-radius: 12px;
+    width: 200px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+/* タイマー数字 */
+#timer {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+    font-family: 'Courier New', monospace;
+}
+
+/* 科目名表示 */
+.subject-name {
+    font-size: 1.2em;
+    color: #667eea;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* ボタンエリア */
+.button-area {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 640px) {
+    .timer-box {
+        width: 180px;
+        padding: 15px;
+    }
+    
+    #timer {
+        font-size: 2em;
+    }
+}

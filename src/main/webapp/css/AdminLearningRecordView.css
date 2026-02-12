@@ -1,0 +1,78 @@
+/* ================================
+   管理者学習記録表示画面 専用CSS
+   2カラムレイアウトに必要な固有スタイルのみ
+================================ */
+
+/* 2カラムコンテンツ */
+.content.two-column {
+    display: flex;
+    gap: 20px;
+}
+
+/* 左パネル（学生一覧） */
+.left-pane {
+    width: 30%;
+}
+
+.left-pane .name-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.left-pane .name-table th,
+.left-pane .name-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+/* 名前一覧を縦スクロールにする */
+.left-pane .name-table tbody {
+    display: block;
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.left-pane .name-table thead,
+.left-pane .name-table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+/* 選択中の名前を強調 */
+a.selected-name {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #3498db;
+}
+
+/* 右パネル（学習記録） */
+.right-pane {
+    width: 70%;
+}
+
+.right-pane .record-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.right-pane .record-table th,
+.right-pane .record-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .content.two-column {
+        flex-direction: column;
+    }
+    
+    .left-pane,
+    .right-pane {
+        width: 100%;
+    }
+}

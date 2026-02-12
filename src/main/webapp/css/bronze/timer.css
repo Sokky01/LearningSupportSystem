@@ -1,0 +1,189 @@
+/* timer-bronze.css — ブロンズテーマ */
+html, body {
+  height: 100%;
+  overflow-y: auto;
+}
+
+body {
+  font-family: "Yu Gothic", sans-serif;
+  background-color: #d6f5ff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ヘッダー */
+header {
+  background-color: #e8fcff;
+  border-bottom: 2px solid #0088cc;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #0088cc;
+}
+
+/* ナビゲーション */
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #c9f5ff;
+  padding: 10px 0;
+  gap: 5px;
+}
+
+nav button {
+  flex: 1 1 auto;
+  min-width: 100px;
+  max-width: 150px;
+  padding: 8px 12px;
+  border: 2px solid #00bfff;
+  border-radius: 12px;
+  background-color: #f0feff;
+  color: #0088cc;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 136, 204, 0.2);
+  white-space: nowrap;
+}
+
+nav button:hover {
+  background-color: #b3e5ff;
+  color: #005a99;
+  box-shadow: 0 4px 8px rgba(0, 136, 204, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Main */
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #0088cc;
+}
+
+.breadcrumb {
+  color: #00bfff;
+  font-weight: bold;
+  display: block;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+/* コンテナ */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+/* タイマーボックス（円形） */
+.timer-box {
+  background-color: rgba(232, 252, 255, 0.8);
+  border: 3px solid #0088cc;
+  border-radius: 50%;
+  width: min(35vw, 300px);
+  height: min(35vw, 300px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 136, 204, 0.3);
+}
+
+/* ラップ表示 */
+#laps {
+  color: #0088cc;
+}
+
+/* ボタン */
+.buttons, .right-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.buttons button,
+.right-buttons button {
+  font-size: 18px;
+  padding: 10px 25px;
+  border: 2px solid #0088cc;
+  border-radius: 5px;
+  background-color: #f0feff;
+  cursor: pointer;
+  color: #0088cc;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.buttons button:hover,
+.right-buttons button:hover {
+  background-color: #b3e5ff;
+  color: #005a99;
+  border-color: #005a99;
+}
+
+/* ポップアップ */
+#popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.popup-content {
+  background: #f0feff;
+  padding: 30px;
+  border: 2px solid #0088cc;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+  color: #0088cc;
+}
+
+.popup-content button {
+  margin: 10px;
+  padding: 8px 20px;
+  border: 2px solid #0088cc;
+  border-radius: 5px;
+  background-color: #f0feff;
+  cursor: pointer;
+  color: #0088cc;
+  font-weight: bold;
+}
+
+.popup-content button:hover {
+  background-color: #b3e5ff;
+  color: #005a99;
+}
+
+/* レスポンシブ */
+@media screen and (max-width: 700px) {
+  .container {
+    justify-content: center;
+  }
+  .timer-box {
+    width: 80%;
+    height: auto;
+  }
+}

@@ -1,0 +1,100 @@
+@charset "UTF-8";@charset "UTF-8";
+body {
+    font-family: "Yu Gothic", sans-serif;
+    background: #dff5ff;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow-x: hidden;
+    background-image:
+        radial-gradient(circle at 80% 20%, #c2ffb0 0%, #dff5ff 60%),
+        radial-gradient(circle at 20% 30%, #fff5b7 0%, #dff5ff 60%),
+        radial-gradient(circle at 60% 70%, #e7d4ff 0%, #dff5ff 60%),
+        radial-gradient(circle at 10% 85%, #ffdede 0%, #dff5ff 60%);
+    background-size: cover;
+}
+
+header {
+    background: rgba(255,255,255,0.7);
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border-bottom: 1px solid #aaa;
+    font-weight: bold;
+}
+
+.container {
+    width: min(90%, 900px);
+    margin: 30px auto;
+    background: rgba(255,255,255,0.4);
+    border: 3px solid black;
+    padding: 20px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 28px;
+    display: inline-block;
+    margin-right: 40px;
+}
+
+.subtitle {
+    font-size: 18px;
+    margin: 0;
+    display: inline-block;
+}
+
+.menu-row {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    padding: 25px 0;
+    border-bottom: 2px solid #666;
+    flex-wrap: wrap;
+}
+
+.menu-row:last-child {
+    border: none;
+}
+
+button {
+    width: 180px;
+    padding: 12px;
+    font-size: 20px;
+    color: white;
+    background: linear-gradient(#6aa6ff, #345ee0);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform .15s, opacity .15s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    opacity: 0.9;
+}
+
+#logout {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 18px;
+    background: #eee;
+    color: #000;
+    border: 1px solid #666;
+    border-radius: 4px;
+    padding: 8px 20px;
+}
+
+@media(max-width: 640px){
+    button {
+        width: 150px;
+        font-size: 18px;
+    }
+    .menu-row {
+        gap: 30px;
+    }
+}

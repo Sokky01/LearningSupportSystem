@@ -1,0 +1,44 @@
+/* learningTools-bronze.css — ブロンズテーマ */
+body {
+    background-color: #d6f5ff;
+    font-family: "Yu Gothic", sans-serif;
+}
+
+.learning-tools-content {
+    background-color: #e8fcff;
+    border-left: 5px solid #00bfff;
+}
+
+.learning-tools-header h2 {
+    color: #0088cc;
+}
+
+/* タイマーボックス */
+.timer-box {
+    background-color: #fffccf;
+    border: 2px solid #87ceeb;
+    border-radius: 10px;
+}
+
+#timer {
+    color: #0088cc;
+}
+
+/* ボタン */
+.finish-btn {
+    background: linear-gradient(135deg, #00bfff 0%, #0088cc 100%);
+    border-color: #0088cc;
+}
+
+.finish-btn:hover {
+    background: linear-gradient(135deg, #00d4ff 0%, #0099dd 100%);
+}
+
+.timer-btn {
+    background: linear-gradient(135deg, #20b2aa 0%, #008080 100%);
+    border-color: #008080;
+}
+
+.timer-btn:hover {
+    background: linear-gradient(135deg, #2ecccc 0%, #009999 100%);
+}
