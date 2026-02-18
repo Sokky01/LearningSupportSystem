@@ -12,7 +12,7 @@ import model.targetSettingBeans;
 public class TargetSettingDao {
 
     private final String JDBC_URL = "jdbc:mariadb://127.0.0.1:3306/lssdb";
-    private final String DB_USER = "root";
+    private final String DB_USER = "user";
     private final String DB_PASS = "mysql";
 
     /**

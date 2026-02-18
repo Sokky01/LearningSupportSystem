@@ -6,9 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>学習時間グラフ表示画面</title>
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/userMainmenu.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/userMainmenu.css">
 <link rel="stylesheet" href="css/unified-theme.css">
+<link rel="icon" type="image/png" href="${pageContext.request.contextPath}/icon/icon.png">
+
 <!-- Chart.js CDN -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <!-- Data labels plugin for Chart.js -->

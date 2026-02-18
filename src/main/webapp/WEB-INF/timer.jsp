@@ -33,12 +33,12 @@ case 1:
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>タイマー画面</title>
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/userMainmenu.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/userMainmenu.css">
 <link rel="stylesheet" href="css/unified-theme.css">
 
 <!-- 【修正】グレード別の外部CSS を動的に読み込み -->
 <link rel="stylesheet" href="css/<%= grade %>/timer.css">
+<link rel="icon" type="image/png" href="${pageContext.request.contextPath}/icon/icon.png">
 
 <style>
 /* ===== タイマー専用スタイル ===== */

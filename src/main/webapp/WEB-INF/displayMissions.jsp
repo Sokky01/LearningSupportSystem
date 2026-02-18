@@ -13,9 +13,10 @@ DisplayMissionsBeansList dmbl = (DisplayMissionsBeansList) request.getAttribute(
 <head>
 <meta charset="UTF-8">
 <title>ミッション表示画面</title>
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/userMainmenu.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/userMainmenu.css">
 <link rel="stylesheet" href="css/unified-theme.css">
+<link rel="icon" type="image/png" href="${pageContext.request.contextPath}/icon/icon.png">
+
 <style>
 /* ===== ミッション専用スタイル ===== */
 .missions-container {

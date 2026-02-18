@@ -21,6 +21,7 @@
     <title>ランキング - 学習管理システム</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/userMainmenu.css">
     <link rel="stylesheet" href="css/unified-theme.css">
+    <link rel="icon" type="image/png" href="${pageContext.request.contextPath}/icon/icon.png">
     <style>
         /* ===== ランキング専用装飾 ===== */
         .ranking-container {

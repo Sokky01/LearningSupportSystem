@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <title>登録確認</title>
 <link rel="stylesheet" href="css/admin-theme.css">
+<link rel="icon" type="image/png" href="${pageContext.request.contextPath}/icon/icon.png">
+
 <style>
 body {
 	background: var(--admin-bg);

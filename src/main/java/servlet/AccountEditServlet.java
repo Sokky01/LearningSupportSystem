@@ -101,6 +101,10 @@ public class AccountEditServlet extends HttpServlet {
 			account_infoDao dao = new account_infoDao();
 			if (!dao.updateAccount(user)) {
 				errorMsg = "データベースの更新に失敗しました。";
+			} else {
+				// DB更新成功後、セッションのニックネームも更新する
+				loginBeans.setNickName(nickName);
+				session.setAttribute("Loginbeans", loginBeans);
 			}
 		}
 

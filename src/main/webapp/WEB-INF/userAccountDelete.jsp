@@ -14,6 +14,8 @@ userAccountListBeans user = (userAccountListBeans) request.getAttribute("user");
 
 <title>削除確認</title>
 <link rel="stylesheet" href="css/admin-theme.css">
+<link rel="icon" type="image/png" href="${pageContext.request.contextPath}/icon/icon.png">
+
 <style>
 /* 削除確認モーダル専用スタイル */
 body {

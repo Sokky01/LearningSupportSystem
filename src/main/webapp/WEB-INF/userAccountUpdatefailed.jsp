@@ -7,6 +7,8 @@
 <meta charset="UTF-8">
 <title>更新失敗</title>
 <link rel="stylesheet" href="css/admin-theme.css">
+<link rel="icon" type="image/png" href="${pageContext.request.contextPath}/icon/icon.png">
+
 <style>
 /* 失敗画面専用スタイル */
 body {

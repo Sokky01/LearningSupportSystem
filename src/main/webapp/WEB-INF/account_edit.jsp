@@ -9,6 +9,8 @@
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/css/userMainmenu.css">
 <link rel="stylesheet" href="css/unified-theme.css">
+<link rel="icon" type="image/png" href="${pageContext.request.contextPath}/icon/icon.png">
+
 <style>
 /* ===== プロフィール編集専用スタイル ===== */
 .edit-container {

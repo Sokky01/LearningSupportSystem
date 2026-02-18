@@ -14,6 +14,9 @@ if (login != null) {
 	response.sendRedirect("adminLogin.jsp");
 	return;
 }
+
+String nickname = login.getNickName();
+boolean hasNickname = (nickname != null && !nickname.trim().isEmpty());
 %>
 
 <html lang="ja">
@@ -23,6 +26,8 @@ if (login != null) {
 <title>利用者メインメニュー</title>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/userMainmenu.css">
 <link rel="stylesheet" href="css/unified-theme.css">
+<link rel="icon" type="image/png" href="${pageContext.request.contextPath}/icon/icon.png">
+
 <style>
 /* ===== メインメニュー専用スタイル ===== */
 .mainmenu-container {
@@ -191,13 +196,21 @@ if (login != null) {
 		<div class="mainmenu-container">
 			<!-- ===== ヘッダー ===== -->
 			<div class="mainmenu-header">
-				<h1>📚 学習支援サービス</h1>
+				<img src="${pageContext.request.contextPath}/icon/icon.png" alt="ロゴ" width="50">
+				
+				<h1>Step Up</h1>
 				
 				<!-- ID表示 -->
 				<div class="welcome-message">
+					<% if (hasNickname) { %>
 					<div class="user-info">
-						<span class="user-id">ID: <%=accountId%></span>
+						<span class="user-id">ようこそ、<%=nickname%>さん</span>
 					</div>
+					<% } else { %>
+					<div class="user-info" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); box-shadow: 0 4px 12px rgba(245, 87, 108, 0.3);">
+						<span class="user-id">利用者情報画面から、ニックネームを変更してください</span>
+					</div>
+					<% } %>
 				</div>
 			</div>
 

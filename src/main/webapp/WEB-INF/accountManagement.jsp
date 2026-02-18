@@ -8,6 +8,8 @@
 
 <title>アカウント管理</title>
 <link rel="stylesheet" href="css/admin-theme.css">
+<link rel="icon" type="image/png" href="${pageContext.request.contextPath}/icon/icon.png">
+
 <style>
 /* アカウント管理専用スタイル */
 .page-header {

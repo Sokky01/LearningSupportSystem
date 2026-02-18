@@ -31,9 +31,9 @@ case 1:
 <head>
 <meta charset="UTF-8">
 <title>学習ツール</title>
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/userMainmenu.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/userMainmenu.css">
 <link rel="stylesheet" href="css/unified-theme.css">
+<link rel="icon" type="image/png" href="${pageContext.request.contextPath}/icon/icon.png">
 
 <!-- 【修正】グレード別の外部CSS を動的に読み込み -->
 <link rel="stylesheet" href="css/<%= grade %>/learningTools.css">

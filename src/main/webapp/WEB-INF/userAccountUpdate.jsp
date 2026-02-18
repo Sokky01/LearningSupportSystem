@@ -17,6 +17,8 @@ userAccountListBeans user = (userAccountListBeans) request.getAttribute("user");
 
 <title>利用者アカウント更新</title>
 <link rel="stylesheet" href="css/admin-theme.css">
+<link rel="icon" type="image/png" href="${pageContext.request.contextPath}/icon/icon.png">
+
 <style>
 /* 更新画面専用スタイル */
 .page-header {

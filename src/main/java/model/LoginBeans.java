@@ -4,7 +4,6 @@ public class LoginBeans {
 
     private int studentNo;
     private String password;
-
    
     public LoginBeans() {
     }
@@ -13,6 +12,7 @@ public class LoginBeans {
     public LoginBeans(int studentNo, String password) {
         this.studentNo = studentNo;
         this.password = password;
+        
     }
 
     public int getStudentNo() {
@@ -30,5 +30,6 @@ public class LoginBeans {
     public void setPassword(String password) {
         this.password = password;
     }
+    
 }
 

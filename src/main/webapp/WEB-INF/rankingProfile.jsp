@@ -19,6 +19,8 @@
     <title>学習記録ページ - <%= profile != null ? profile.getNickName() : "ユーザー" %></title>
     <link rel="stylesheet"href="<%=request.getContextPath()%>/css/userMainmenu.css">
 	<link rel="stylesheet" href="css/unified-theme.css">
+	<link rel="icon" type="image/png" href="${pageContext.request.contextPath}/icon/icon.png">
+	
     <style>
         /* ===== プロフィールページ専用スタイル ===== */
         .profile-container {

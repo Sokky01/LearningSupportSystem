@@ -90,6 +90,16 @@ int adminId = (adminLogin != null) ? adminLogin.getAccountId() : 0;
     color: white;
 }
 
+/* 名前表示（各ページのCSS差異に関わらず常に白） */
+.admin-id-display {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    color: white !important;
+}
+
 /* ログアウトボタン */
 .admin-navbar .logout-btn {
     background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
@@ -172,9 +182,11 @@ int adminId = (adminLogin != null) ? adminLogin.getAccountId() : 0;
         </div>
         
         <!-- 右側：ID・ログアウト -->
-        <div class="nav-links-right">
-            <div class="admin-id-badge">ID: <%= adminId %></div>
-            <a href="<%=path%>/AdminLogoutServlet" class="logout-btn">ログアウト</a>
-        </div>
+        <div style="display: flex; align-items: center; gap: 15px;">
+			<div class="admin-id-display" style="color: white;"><%= (adminLogin != null) ? adminLogin.getManagerName() + "さん" : "" %></div>
+			<form action="AdminLogoutServlet" method="get" style="margin: 0;">
+				<input type="submit" class="logout-button" value="ログアウト">
+			</form>
+		</div>
     </div>
 </nav>

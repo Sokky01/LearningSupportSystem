@@ -7,13 +7,13 @@ import java.sql.PreparedStatement;
 public class UserRegisterInfoDAO {
 
     private final String JDBC_URL = "jdbc:mariadb://127.0.0.1:3306/lssdb";
-    private final String DB_USER = "root";
+    private final String DB_USER = "user";
     private final String DB_PASS = "mysql";
 
 
         public void insertUser(int studentNo, int attendanceNo, String classId, String studentName) {
             try (Connection conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS)) {
-                String sql = "INSERT INTO userMaster(StudentNo,AttendanceNo,ClassId,StudentName,MaxGrade,NickName,PublicPreference,SettingGradeId,LastLogin) VALUES (?, ?, ?, ?,1,'名無し',0,1,'2020-10-01')";
+                String sql = "INSERT INTO userMaster(StudentNo,AttendanceNo,ClassId,StudentName,MaxGrade,NickName,PublicPreference,SettingGradeId,LastLogin) VALUES (?, ?, ?, ?,1,NULL,0,1,'2020-10-01')";
                 PreparedStatement ps = conn.prepareStatement(sql);
                 ps.setInt(1, studentNo);
                 ps.setInt(2, attendanceNo);

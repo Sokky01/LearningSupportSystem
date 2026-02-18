@@ -77,4 +77,52 @@ public class AdminLoginDao {
 	            e.printStackTrace();
 	        }
 	    }
+	    
+	    /**
+	     *利用者のニックネーム取得
+	     */
+	    public String getNickName(int studentNo) {
+	        String sql = "SELECT nickname FROM userMaster WHERE studentNo = ?";
+	        String nickName = null;
+	        
+	        try (Connection conn = DbConnect.getConnection();
+	             PreparedStatement pStmt = conn.prepareStatement(sql)) {
+
+	            pStmt.setInt(1, studentNo);
+
+	            try (ResultSet rs = pStmt.executeQuery()) {
+	                if (rs.next()) {
+	                	nickName = rs.getString("nickname");
+	                }
+	            }
+	            
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+			return nickName;
+	    }
+	    
+	    /**
+	     *管理者の名前取得
+	     */
+	    public String getManagerName(int ManagerId) {
+	        String sql = "SELECT ManagerName FROM teacherMaster WHERE ManagerId = ?";
+	        String managerName = null;
+	        
+	        try (Connection conn = DbConnect.getConnection();
+	             PreparedStatement pStmt = conn.prepareStatement(sql)) {
+
+	            pStmt.setInt(1, ManagerId);
+
+	            try (ResultSet rs = pStmt.executeQuery()) {
+	                if (rs.next()) {
+	                	 managerName = rs.getString("ManagerName");
+	                }
+	            }
+	            
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+			return managerName;
+	    }
 	}
