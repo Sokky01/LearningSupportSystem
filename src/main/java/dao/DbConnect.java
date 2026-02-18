@@ -12,7 +12,7 @@ public class DbConnect {
 
     // DB接続情報（必要に応じて変更）
 	private static final String JDBC_URL = "jdbc:mariadb://127.0.0.1:3306/lssdb";
-    private static final String DB_USER = "root";
+    private static final String DB_USER = "user";
     private static final String DB_PASS = "mysql";
 
     static {
