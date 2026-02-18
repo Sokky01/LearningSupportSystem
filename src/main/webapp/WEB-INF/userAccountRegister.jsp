@@ -6,6 +6,8 @@
 <meta charset="UTF-8">
 <title>利用者アカウント登録</title>
 <link rel="stylesheet" href="css/admin-theme.css">
+<link rel="icon" type="image/png" href="${pageContext.request.contextPath}/icon/icon.png">
+
 <style>
 /* 登録画面専用スタイル */
 .page-header {

@@ -14,9 +14,10 @@ List<targetSettingBeans> subjectList = (List<targetSettingBeans>) request.getAtt
 <head>
 <meta charset="UTF-8">
 <title>目標時間設定画面</title>
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/userMainmenu.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/userMainmenu.css">
 <link rel="stylesheet" href="css/unified-theme.css">
+<link rel="icon" type="image/png" href="${pageContext.request.contextPath}/icon/icon.png">
+
 <style>
 /* ===== 目標設定専用スタイル ===== */
 .target-container {

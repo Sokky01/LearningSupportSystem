@@ -12,9 +12,10 @@ RankingBeans profile = (RankingBeans) request.getAttribute("profile");
 <head>
 <meta charset="UTF-8">
 <title><%=profile.getNickName()%> さんのプロフィール</title>
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/userMainmenu.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/userMainmenu.css">
 <link rel="stylesheet" href="css/unified-theme.css">
+<link rel="icon" type="image/png" href="${pageContext.request.contextPath}/icon/icon.png">
+
 <style>
 /* ===== プロフィール専用スタイル ===== */
 .profile-container {

@@ -17,6 +17,7 @@
 <meta charset="UTF-8">
 <title>アカウント管理</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/adminAccountList.css">
+<link rel="icon" type="image/png" href="${pageContext.request.contextPath}/icon/icon.png">
 </head>
 <body>
 

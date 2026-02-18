@@ -14,6 +14,8 @@ List<userAccountListBeans> userLogin = (List<userAccountListBeans>) session.getA
 
 <title>利用者アカウント一覧</title>
 <link rel="stylesheet" href="css/admin-theme.css">
+<link rel="icon" type="image/png" href="${pageContext.request.contextPath}/icon/icon.png">
+
 <style>
 /* 利用者一覧専用スタイル */
 .page-header {

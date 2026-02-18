@@ -8,6 +8,7 @@
 <% AdminLoginBeans Login = (AdminLoginBeans) session.getAttribute("Loginbeans"); %>
 <title>管理者用メインメニュー</title>
 <link rel="stylesheet" href="css/admin-theme.css">
+<link rel="icon" type="image/png" href="${pageContext.request.contextPath}/icon/icon.png">
 <style>
 /* メインメニュー専用スタイル */
 .admin-header {
@@ -157,23 +158,10 @@
 </style>
 </head>
 <body>
-	<!-- ヘッダー -->
-	<div class="admin-header">
-		<div style="width: 120px;"></div> <!-- 左側スペース -->
-		
-		<div style="flex: 1; text-align: center;">
-			<h1>📊 管理者システム</h1>
-		</div>
-		
-		<div style="display: flex; align-items: center; gap: 15px;">
-			<div class="admin-id-display">ID: <%= Login.getAccountId() %></div>
-			<form action="AdminLogoutServlet" method="get" style="margin: 0;">
-				<input type="submit" class="logout-button" value="ログアウト">
-			</form>
-		</div>
-	</div>
+	
 
 	<!-- メインコンテンツ -->
+	<jsp:include page="common/admin_header.jsp" />
 	<div class="menu-container">
 		<div class="menu-title">学習支援サービス 管理メニュー</div>
 
